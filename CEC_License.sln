@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32929.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CEC_License", "CEC_License\CEC_License.csproj", "{31222ADF-E20D-4B9E-AD60-2D223E14FE83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		2019|Any CPU = 2019|Any CPU
+		2021|Any CPU = 2021|Any CPU
+		2023|Any CPU = 2023|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31222ADF-E20D-4B9E-AD60-2D223E14FE83}.2019|Any CPU.ActiveCfg = 2019|Any CPU
+		{31222ADF-E20D-4B9E-AD60-2D223E14FE83}.2019|Any CPU.Build.0 = 2019|Any CPU
+		{31222ADF-E20D-4B9E-AD60-2D223E14FE83}.2021|Any CPU.ActiveCfg = 2021|Any CPU
+		{31222ADF-E20D-4B9E-AD60-2D223E14FE83}.2021|Any CPU.Build.0 = 2021|Any CPU
+		{31222ADF-E20D-4B9E-AD60-2D223E14FE83}.2023|Any CPU.ActiveCfg = 2023|Any CPU
+		{31222ADF-E20D-4B9E-AD60-2D223E14FE83}.2023|Any CPU.Build.0 = 2023|Any CPU
+		{31222ADF-E20D-4B9E-AD60-2D223E14FE83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31222ADF-E20D-4B9E-AD60-2D223E14FE83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31222ADF-E20D-4B9E-AD60-2D223E14FE83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31222ADF-E20D-4B9E-AD60-2D223E14FE83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5EA6CBA4-5DCF-4480-B39E-33F78673CFD3}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,36 @@
+﻿<Window x:Class="CEC_License.frmAbout"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CEC_License"
+             mc:Ignorable="d" 
+            Height="250" Width="500"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" Loaded="frmAbout_Load">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="產品名稱：" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="授權主機：" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="授權碼：" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="授權類型：" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+        <!--授權資訊讀取-->
+        <TextBlock x:Name="lbProductName" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="產品名稱" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <TextBlock x:Name="lbProductID" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="授權主機代號" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <TextBlock x:Name="lbProductKey" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="授權碼資訊" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <TextBlock x:Name="lblicenseType" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Text="授權類型資訊" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <Button x:Name="button1" Grid.Row="4" Grid.Column="4" Width="80" Height="30" Content="關閉" Click="button1_Click" Loaded="frmAbout_Load"/>
+    </Grid>
+</Window>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command CEC_License</Text>
+    <Description>Some description for CEC_License</Description>
+    <Assembly>CEC_License.dll</Assembly>
+    <FullClassName>CEC_License.Command</FullClassName>
+    <ClientId>ebed0dce-4d7d-4a59-8413-8052ca835056</ClientId>
+    <VendorId>TL27</VendorId>
+    <VendorDescription>TravisLiu_CEC, chliu@continental-engineering.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application CEC_License</Name>
+    <Assembly>CEC_License.dll</Assembly>
+    <FullClassName>CEC_License.App</FullClassName>
+    <ClientId>f344d518-3c98-47ac-b423-d060e31d5346</ClientId>
+    <VendorId>TL27</VendorId>
+    <VendorDescription>TravisLiu_CEC, chliu@continental-engineering.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
