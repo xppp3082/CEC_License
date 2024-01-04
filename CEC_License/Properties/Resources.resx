@@ -130,6 +130,9 @@
   <data name="_2__放置管排管段標籤96" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2. 放置管排管段標籤96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="分區數量計算_ai_x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\分區數量計算-ai_x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="副穿樑套管ICON合集_複製" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\副穿樑套管ICON合集_複製.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -240,5 +243,26 @@
   </data>
   <data name="預組ICON_重新編號_svg_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\預組ICON_重新編號-svg_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="點選放置圓形版開口32_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\點選放置圓形版開口32-svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="點選放置圓形版開口_依樓層複製32_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\點選放置圓形版開口_依樓層複製32-svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="點選放置圓形版開口_局部更新32_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\點選放置圓形版開口_局部更新32-svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="點選放置圓形版開口_更新32_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\點選放置圓形版開口_更新32-svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="點選放置圓形版開口_複製32_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\點選放置圓形版開口_複製32-svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="點選放置多管版開口32_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\點選放置多管版開口32-svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="點選放置方形版開口32_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\點選放置方形版開口32-svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

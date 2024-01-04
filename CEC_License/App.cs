@@ -55,6 +55,7 @@ namespace CEC_License
             string ApiDllPath_PreFab = TargetPath + versionNumber + @"\CEC_PreFabric.dll";
             string ApiDllPath_BlockTrans = TargetPath + versionNumber + @"\CEC_CADBlockTrans.dll";
             string ApiDllPath_PipeTags = TargetPath + versionNumber + @"\PipeTagger.dll";
+            string ApiDllPath_EquipsCount = TargetPath + versionNumber + @"\CEC_Count.dll";
             //string ApiDllPath_Hanger = TargetPath + @"\AutoHangerCreation_ButtonCreate.dll";
             //string ApiDllPath_BeamCast = TargetPath  + @"\BeamCasing_ButtonCreate.dll";
             //string ApiDllPath_WallCast = TargetPath + @"\CEC_WallCast.dll";
@@ -71,9 +72,12 @@ namespace CEC_License
             const string RIBBON_PANEL3 = "穿樑CSD&SEM";
             const string RIBBON_PANEL4 = "穿牆開口";
             const string RIBBON_PANEL5 = "穿牆CSD&SEM";
+            const string RIBBON_PANEL_Slab = "穿版開口";
+            const string RIBBON_PANEL_SlabCSD = "穿版CSD&SEM";
             const string RIBBON_PANEL6 = "管線預組";
             const string RIBBON_PANEL7 = "圖塊轉換";
             const string RIBBON_PANEL8 = "水平管標籤";
+            const string RIBBON_PANEL9 = "數量計算";
             const string RIBBON_Regis = "授權註冊";
 
             #region 判斷授權
@@ -136,9 +140,12 @@ namespace CEC_License
             RibbonPanel panel3 = a.CreateRibbonPanel(RIBBON_TAB, RIBBON_PANEL3);//穿樑CSD&SEM
             RibbonPanel panel4 = a.CreateRibbonPanel(RIBBON_TAB, RIBBON_PANEL4);//穿牆開口
             RibbonPanel panel5 = a.CreateRibbonPanel(RIBBON_TAB, RIBBON_PANEL5);//穿牆CSD&SEM
+            RibbonPanel panelSlab = a.CreateRibbonPanel(RIBBON_TAB, RIBBON_PANEL_Slab);//穿版開口
+            RibbonPanel panelSlabCSD = a.CreateRibbonPanel(RIBBON_TAB, RIBBON_PANEL_SlabCSD);//穿版CSD&SEM
             RibbonPanel panel6 = a.CreateRibbonPanel(RIBBON_TAB, RIBBON_PANEL6);//管線預組
             RibbonPanel panel7 = a.CreateRibbonPanel(RIBBON_TAB, RIBBON_PANEL7);//圖塊轉換
             RibbonPanel panel8 = a.CreateRibbonPanel(RIBBON_TAB, RIBBON_PANEL8);//水平管標籤
+            RibbonPanel panel9 = a.CreateRibbonPanel(RIBBON_TAB, RIBBON_PANEL9);//數量計算
             RibbonPanel panelRegis = a.CreateRibbonPanel(RIBBON_TAB, RIBBON_Regis);//註冊資訊
 
             #region[Panel1] - 土木機電BIM-管吊架
@@ -171,8 +178,14 @@ namespace CEC_License
                 btnData3.LargeImage = imgSrc3;
             }
             PushButton button = panel1.AddItem(btnData) as PushButton;
+            ContextualHelp singleHangHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-a45761cab9f343f3980d08c52209e3ba?pvs=4");
+            button.SetContextualHelp(singleHangHelp);
             PushButton button2 = panel1.AddItem(btnData2) as PushButton;
+            ContextualHelp multiHangHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-6a6435f0574a42ed931e41c75bf5b9ec?pvs=4");
+            button2.SetContextualHelp(multiHangHelp);
             PushButton button3 = panel1.AddItem(btnData3) as PushButton;
+            ContextualHelp setHangHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-aa9267be3e6a4afa930c8529f3a6e8a3?pvs=4");
+            button3.SetContextualHelp(setHangHelp);
             checkitem.Add(button);
             checkitem.Add(button2);
             checkitem.Add(button3);
@@ -346,8 +359,15 @@ namespace CEC_License
             SplitButtonData setUpButtonData = new SplitButtonData("CastSetUpButton", "穿樑套管更新");
             SplitButton splitButton1 = panel2.AddItem(setUpButtonData) as SplitButton;
             PushButton buttonRenew = splitButton1.AddPushButton(btnDataReNew);
+            ContextualHelp reNewHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-e8d941557c5b4c8297bea474826b0eac?pvs=4");
+            buttonRenew.SetContextualHelp(reNewHelp);
+            splitButton1.SetContextualHelp(reNewHelp);
             PushButton buttonUpdatePart = splitButton1.AddPushButton(btnDataUpdatePart);
+            ContextualHelp updatePart = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-c89a508ab61c4bd8b0356dac67813317?pvs=4");
+            buttonUpdatePart.SetContextualHelp(updatePart);
             PushButton buttonSetCast = splitButton1.AddPushButton(btnDataSetCast);
+            ContextualHelp setCastHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-448ab69ca6a54afc844cbdb1872a83a1?pvs=4");
+            buttonSetCast.SetContextualHelp(setCastHelp);
             checkitem.Add(buttonRenew);
             only2Ditem.Add(buttonUpdatePart);
             checkitem.Add(buttonSetCast);
@@ -356,23 +376,42 @@ namespace CEC_License
             SplitButtonData STButtonData = new SplitButtonData("CreateCastST", "鋼構開孔");
             SplitButton splitButtonST = panel2.AddItem(STButtonData) as SplitButton;
             PushButton STbutton = splitButtonST.AddPushButton(btnDataST);
+            ContextualHelp stButtonHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-a812fb60d2b44db3baad2c8445aa8151?pvs=4");
+            STbutton.SetContextualHelp(stButtonHelp);
+            splitButtonST.SetContextualHelp(stButtonHelp);
             PushButton STbuttonLink = splitButtonST.AddPushButton(btnDataSTLink);
+            ContextualHelp stButtonLinkHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-a812fb60d2b44db3baad2c8445aa8151?pvs=4");
+            STbuttonLink.SetContextualHelp(stButtonLinkHelp);
             checkitem.Add(STbutton);
             checkitem.Add(STbuttonLink);
 
             SplitButtonData RCButtonData = new SplitButtonData("CreateCast", "RC套管");
             SplitButton splitButtonRC = panel2.AddItem(RCButtonData) as SplitButton;
             PushButton RCbutton = splitButtonRC.AddPushButton(btnDataRC);
+            ContextualHelp rcButtonHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-RC-05318fa9db3f47aabc66b4a082c1d4cb?pvs=4");
+            RCbutton.SetContextualHelp(rcButtonHelp);
+            splitButtonRC.SetContextualHelp(rcButtonHelp);
             PushButton RCbuttonLink = splitButtonRC.AddPushButton(btnDataRCLink);
+            ContextualHelp rcButtonLinkHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-RC-05318fa9db3f47aabc66b4a082c1d4cb?pvs=4");
+            RCbuttonLink.SetContextualHelp(rcButtonLinkHelp);
             checkitem.Add(RCbutton);
             checkitem.Add(RCbuttonLink);
 
             SplitButtonData rectCastButtonData = new SplitButtonData("RectCastButton", "方形樑開口");
             SplitButton splitButtonRect = panel2.AddItem(rectCastButtonData) as SplitButton;
             PushButton buttonRect = splitButtonRect.AddPushButton(btnDataRect);
+            ContextualHelp rectHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-7223974d90e346c283bafb2ea6ae9550?pvs=4");
+            buttonRect.SetContextualHelp(rectHelp);
+            splitButtonRect.SetContextualHelp(rectHelp);
             PushButton buttonRectLink = splitButtonRect.AddPushButton(btnDataRectLink);
+            ContextualHelp rectLinkHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-7223974d90e346c283bafb2ea6ae9550?pvs=4");
+            buttonRectLink.SetContextualHelp(rectLinkHelp);
             PushButton buttonMultiOpen = splitButtonRect.AddPushButton(btnDataMultiOpen);
+            ContextualHelp multiRectHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-336d33762f3c4760b08f0503dd517ffa?pvs=4");
+            buttonMultiOpen.SetContextualHelp(multiRectHelp);
             PushButton buttonMultiLink = splitButtonRect.AddPushButton(btnDataMultiLink);
+            ContextualHelp multiRectLinkHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-336d33762f3c4760b08f0503dd517ffa?pvs=4");
+            buttonMultiOpen.SetContextualHelp(multiRectLinkHelp);
             checkitem.Add(buttonRect);
             checkitem.Add(buttonRectLink);
             checkitem.Add(buttonMultiOpen);
@@ -433,8 +472,12 @@ namespace CEC_License
             SplitButtonData copyCastButtonData = new SplitButtonData("CopyCastButton", "複製外參\n   穿樑套管");
             SplitButton splitButtonCopyCast = panel3.AddItem(copyCastButtonData) as SplitButton;
             PushButton buttonCopy = splitButtonCopyCast.AddPushButton(btnDataCopy);
+            ContextualHelp copyHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-b0894ec0bf074798b42a227190beb1bd?pvs=4");
+            buttonCopy.SetContextualHelp(copyHelp);
+            splitButtonCopyCast.SetContextualHelp(copyHelp);
             PushButton buttonCopyPart = splitButtonCopyCast.AddPushButton(btnDataCopyPart);
-            //PushButton buttonCopy = panel3.AddItem(btnDataCopy) as PushButton;
+            ContextualHelp copyPartHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-f0f15b474cce443e8b3c850a41494bfc?pvs=4");
+            buttonCopyPart.SetContextualHelp(copyPartHelp);
             checkitem.Add(buttonCopy);
             only2Ditem.Add(buttonCopyPart);
 
@@ -442,7 +485,12 @@ namespace CEC_License
             SplitButtonData setNumButtonData = new SplitButtonData("CastSetNumButton", "穿樑套管編號");
             SplitButton splitButtonSetNum = panel3.AddItem(setNumButtonData) as SplitButton;
             PushButton buttonNum = splitButtonSetNum.AddPushButton(btnDataNum);
+            ContextualHelp numHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-024a30c861694ab1934a9422d988181a?pvs=4");
+            buttonNum.SetContextualHelp(numHelp);
+            splitButtonSetNum.SetContextualHelp(numHelp);
             PushButton buttonReNum = splitButtonSetNum.AddPushButton(btnDataReNum);
+            ContextualHelp reNumHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-20ddb82dc1fd453987e2577ba4ec2513?pvs=4");
+            buttonReNum.SetContextualHelp(reNumHelp);
             checkitem.Add(buttonNum);
             checkitem.Add(buttonReNum);
             #endregion
@@ -578,7 +626,12 @@ namespace CEC_License
             SplitButtonData updateButtonData = new SplitButtonData("UpdateCast", "更新\n   穿牆資訊");
             SplitButton splitButtonWallUpdate = panel4.AddItem(updateButtonData) as SplitButton;
             PushButton buttonWallCastUpdate = splitButtonWallUpdate.AddPushButton(btnDataWallCastUpdate);
+            ContextualHelp wallCastUpdateHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-13f7097a668947b8b161338d7e01868d?pvs=4");
+            buttonWallCastUpdate.SetContextualHelp(wallCastUpdateHelp);
+            splitButtonWallUpdate.SetContextualHelp(wallCastUpdateHelp);
             PushButton buttonWallCastUpdatePart = splitButtonWallUpdate.AddPushButton(btnDataWallCastUpdatePart);
+            ContextualHelp wallCastUpdatePart = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-a210f66da98346eda94183b2b74b6fec?pvs=4");
+            buttonWallCastUpdatePart.SetContextualHelp(wallCastUpdatePart);
             checkitem.Add(buttonWallCastUpdate);
             only2Ditem.Add(buttonWallCastUpdatePart);
 
@@ -586,7 +639,12 @@ namespace CEC_License
             SplitButtonData wallCastButtonData = new SplitButtonData("WallCast", "穿牆套管");
             SplitButton splitButtonWallCast = panel4.AddItem(wallCastButtonData) as SplitButton;
             PushButton buttonWallCast = splitButtonWallCast.AddPushButton(btnDataWallCastCreate);
+            ContextualHelp wallCastHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-9ca40a440c284e12b81d4568c2553c51?pvs=4");
+            buttonWallCast.SetContextualHelp(wallCastHelp);
+            splitButtonWallCast.SetContextualHelp(wallCastHelp);
             PushButton buttonWallCastLink = splitButtonWallCast.AddPushButton(btnDataWallCastlink);
+            ContextualHelp wallCastLinkHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-9ca40a440c284e12b81d4568c2553c51?pvs=4");
+            buttonWallCastLink.SetContextualHelp(wallCastLinkHelp);
             checkitem.Add(buttonWallCast);
             checkitem.Add(buttonWallCastLink);
 
@@ -594,9 +652,17 @@ namespace CEC_License
             SplitButtonData wallRectCastButtonData = new SplitButtonData("WallCastRect", "方型牆開口");
             SplitButton splitButtonWallRect = panel4.AddItem(wallRectCastButtonData) as SplitButton;
             PushButton buttonWallCastRect = splitButtonWallRect.AddPushButton(btnDataWallCastRect);
+            ContextualHelp wallCastRectHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-fda59b168acf40f785ec0da94e31d7a4?pvs=4");
+            buttonWallCastRect.SetContextualHelp(wallCastRectHelp);
+            splitButtonWallRect.SetContextualHelp(wallCastRectHelp);
             PushButton buttonWallCastRectLink = splitButtonWallRect.AddPushButton(btnDataWallCastRectLink);
+            ContextualHelp wallCastRectLinkHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-fda59b168acf40f785ec0da94e31d7a4?pvs=4");
+            buttonWallCastRectLink.SetContextualHelp(wallCastRectLinkHelp);
             PushButton buttonWallCastRectMulti = splitButtonWallRect.AddPushButton(btnDataWallCastRectMulti);
+            ContextualHelp wallCastRectMultiHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-336d33762f3c4760b08f0503dd517ffa?pvs=4");
+            buttonWallCastRectMulti.SetContextualHelp(wallCastRectMultiHelp);
             PushButton buttonWallMultiRectLink = splitButtonWallRect.AddPushButton(btnDataMultiRectLink);
+            buttonWallMultiRectLink.SetContextualHelp(wallCastRectMultiHelp);
             checkitem.Add(buttonWallCastRect);
             checkitem.Add(buttonWallCastRectLink);
             checkitem.Add(buttonWallCastRectMulti);
@@ -651,21 +717,181 @@ namespace CEC_License
             }
 
             //複製所有穿牆套管
-            SplitButtonData copyWallCastButtonData = new SplitButtonData("CopyWallCastButton","複製外參\n穿牆套管");
+            SplitButtonData copyWallCastButtonData = new SplitButtonData("CopyWallCastButton", "複製外參\n穿牆套管");
             SplitButton splitButtonCopyWallCast = panel5.AddItem(copyWallCastButtonData) as SplitButton;
             PushButton buttonWallCastCopy = splitButtonCopyWallCast.AddPushButton(btnDataCopyWallCast);
+            ContextualHelp wallCastCopyHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-c856f7e6a49c4bdba16651c764c25af5?pvs=4");
+            buttonWallCastCopy.SetContextualHelp(wallCastCopyHelp);
+            splitButtonCopyWallCast.SetContextualHelp(wallCastCopyHelp);
             PushButton buttonWallCastCoPart = splitButtonCopyWallCast.AddPushButton(btnDataCopyWallCastPart);
+            ContextualHelp wallCastCoPartHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-03ec3ad1c3314ff98e91436d971a113a?pvs=4");
+            buttonWallCastCoPart.SetContextualHelp(wallCastCoPartHelp);
             //PushButton buttonWallCastCopy = panel5.AddItem(btnDataCopyWallCast) as PushButton;
             checkitem.Add(buttonWallCastCopy);
             only2Ditem.Add(buttonWallCastCoPart);
 
-            //穿樑套管編號(編號&重編)
+            //穿牆套管編號(編號&重編)
             SplitButtonData setWallNumButtonData = new SplitButtonData("WallCastSetNumButton", "穿牆套管編號");
             SplitButton splitButtonWallNum = panel5.AddItem(setNumButtonData) as SplitButton;
             PushButton buttonWallCastNum = splitButtonWallNum.AddPushButton(btnDataWallCastNum);
+            ContextualHelp wallCastNumHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-6315ccaa132543bbb0b9a2e40784712f?pvs=4");
+            buttonWallCastNum.SetContextualHelp(wallCastNumHelp);
+            splitButtonWallNum.SetContextualHelp(wallCastNumHelp);
             PushButton buttonWallCasReNum = splitButtonWallNum.AddPushButton(btnDataWallCastReNum);
+            ContextualHelp wallCastReNumHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-249c616b7ad34e73bcdec7a3c2f3987c?pvs=4");
+            buttonWallCasReNum.SetContextualHelp(wallCastReNumHelp);
             checkitem.Add(buttonWallCastNum);
             checkitem.Add(buttonWallCasReNum);
+            #endregion
+
+            #region[Panel_Slab] - 穿版開口
+            System.Drawing.Image image_SlabUpdate = Properties.Resources.點選放置圓形版開口_更新32_svg;
+            ImageSource imgSrcSlabUpdate = GetImageSource(image_SlabUpdate);
+            System.Drawing.Image image_SlabUpdatePart = Properties.Resources.點選放置圓形版開口_局部更新32_svg;
+            ImageSource imgSrcSlabUpdatePart = GetImageSource(image_SlabUpdatePart);
+            System.Drawing.Image image_SlabCast = Properties.Resources.點選放置圓形版開口32_svg;
+            ImageSource imgSrcSlabCast = GetImageSource(image_SlabCast);
+            System.Drawing.Image image_RectSlabCast = Properties.Resources.點選放置方形版開口32_svg;
+            ImageSource imgSrcRectSlabCast = GetImageSource(image_RectSlabCast);
+            System.Drawing.Image image_MultiSlabCast = Properties.Resources.點選放置多管版開口32_svg;
+            ImageSource imgSrcMultiSlabCast = GetImageSource(image_MultiSlabCast);
+
+            PushButtonData btnDataSlabCastUpdate = new PushButtonData(
+               "MyButton_SlabCastUpdate",
+                "更新\n穿版資訊",
+                 ApiDllPath_WallCast,
+                 "CEC_WallCast.SlabCastUpdate"
+                );
+            {
+                btnDataSlabCastUpdate.ToolTip = "一鍵更新穿版開口資訊";
+                btnDataSlabCastUpdate.LongDescription = $"一鍵更新穿版開口資訊({assemblyInfo})";
+                btnDataSlabCastUpdate.LargeImage = imgSrcSlabUpdate;
+            }
+
+            PushButtonData btnDataSlabUpdatePart = new PushButtonData(
+               "MyButton_SlabUpdatePart",
+               "局部更新\n穿版資訊",
+               ApiDllPath_WallCast,
+               "CEC_WallCast.SlabCastUpdatePart"
+                );
+            {
+                btnDataSlabUpdatePart.ToolTip = "依照目前視圖範圍，局部更新穿牆開口資訊";
+                btnDataSlabUpdatePart.LongDescription = $"依照目前視圖範圍，局部更新穿版開口資訊({assemblyInfo})";
+                btnDataSlabUpdatePart.LargeImage = imgSrcSlabUpdatePart;
+            }
+
+            PushButtonData btnDataSlabCast = new PushButtonData(
+                "MyButton_SlabCast",
+                "穿版套管",
+                 ApiDllPath_WallCast,
+                 "CEC_WallCast.CreateSlabCast"
+                );
+            {
+                btnDataSlabCast.ToolTip = "點選管與外參牆生成穿版套管";
+                btnDataSlabCast.LongDescription = $"先點選需要創建的管段，再點選其穿過的外參牆，生成穿牆套管({assemblyInfo})";
+                btnDataSlabCast.LargeImage = imgSrcSlabCast;
+            }
+
+            PushButtonData btnDataRectSlab = new PushButtonData(
+                "MyButton_SlabRect",
+                "方形穿版開口",
+                ApiDllPath_WallCast,
+                "CEC_WallCast.CreateRectSlabCast"
+                );
+            {
+                btnDataRectSlab.ToolTip = "點選外參管與版生成穿牆方開口";
+                btnDataRectSlab.LongDescription = $"先點選需要創建的外參管段，再點選其穿過的版，生成版開口({assemblyInfo})";
+                btnDataRectSlab.LargeImage = imgSrcRectSlabCast;
+            }
+
+            PushButtonData btnDataMultiRectSlab = new PushButtonData(
+                "MyButton_MultiSlabCast",
+                "多管版開口",
+                ApiDllPath_WallCast,
+                "CEC_WallCast.MultiSlabRectCast"
+                );
+            {
+                btnDataMultiRectSlab.ToolTip = "點選外參牆與多支管生成穿版方開口";
+                btnDataMultiRectSlab.LongDescription = $"先點選需要創建的管段(複數)，再點選其穿過的外參版，生成穿版方開口({assemblyInfo})";
+                btnDataMultiRectSlab.LargeImage = imgSrcMultiSlabCast;
+            }
+
+            //更新穿版套管
+            SplitButtonData updateSlabButtonData = new SplitButtonData("UpdateSlabCast", "更新\n穿版資訊");
+            SplitButton splitButtonSlabUpdate = panelSlab.AddItem(updateSlabButtonData) as SplitButton;
+            PushButton buttonSlabCastUpdate = splitButtonSlabUpdate.AddPushButton(btnDataSlabCastUpdate);
+            ContextualHelp slabCastUpdateHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-7bb0c4f60fd245a4976df2c4a1e5c71e?pvs=4");
+            splitButtonSlabUpdate.SetContextualHelp(slabCastUpdateHelp);
+            buttonSlabCastUpdate.SetContextualHelp(slabCastUpdateHelp);
+            PushButton buttonSlabCastUpdatePart = splitButtonSlabUpdate.AddPushButton(btnDataSlabUpdatePart);
+            ContextualHelp slabUpdatePartHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-edcc90f4da414b3ba3e833bc458507a2?pvs=4");
+            buttonSlabCastUpdatePart.SetContextualHelp(slabUpdatePartHelp);
+            checkitem.Add(buttonSlabCastUpdate);
+            only2Ditem.Add(buttonSlabCastUpdatePart);
+
+            //圓型穿版開口
+            PushButton slabCastButton = panelSlab.AddItem(btnDataSlabCast) as PushButton;
+            ContextualHelp slabCastHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-ed438e9388934a1db411e482038ce068?pvs=4");
+            slabCastButton.SetContextualHelp(slabCastHelp);
+            checkitem.Add(slabCastButton);
+
+            //方形穿版開口
+            SplitButtonData rectSlabSplitButton = new SplitButtonData("RectSlabCast", "方形\n穿版開口");
+            SplitButton splitButtonRectSlabCast = panelSlab.AddItem(rectSlabSplitButton) as SplitButton;
+            PushButton buttonRectSlabCast = splitButtonRectSlabCast.AddPushButton(btnDataRectSlab);
+            ContextualHelp rectSlabHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-45681d8851a445f09a1a5464ecea15b1?pvs=4");
+            splitButtonRectSlabCast.SetContextualHelp(rectSlabHelp);
+            buttonRectSlabCast.SetContextualHelp(rectSlabHelp);
+            PushButton buttonMultiRectSlab = splitButtonRectSlabCast.AddPushButton(btnDataMultiRectSlab);
+            ContextualHelp multiSlabHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-9ca80aa1166e4dfeb0b9fbb68db3cfb9?pvs=4");
+            buttonMultiRectSlab.SetContextualHelp(multiSlabHelp);
+            checkitem.Add(buttonRectSlabCast);
+            checkitem.Add(buttonMultiRectSlab);
+            #endregion
+
+            #region [Panel_SlabCSD] - 穿版開口CSD&SEM
+            System.Drawing.Image image_SlabCopy = Properties.Resources.點選放置圓形版開口_複製32_svg;
+            ImageSource imgSrcSlabCopy = GetImageSource(image_SlabCopy);
+            System.Drawing.Image image_SlabCopyPart = Properties.Resources.點選放置圓形版開口_依樓層複製32_svg;
+            ImageSource imgSrcSlabCopyPart = GetImageSource(image_SlabCopyPart);
+
+            PushButtonData btnDataSlabCopy = new PushButtonData(
+            "MyButton_SlabCopy",
+            "複製外參\n穿版開口",
+            ApiDllPath_WallCast,
+            "CEC_WallCast.CopyAllSlabCast"
+            );
+            {
+                btnDataSlabCopy.ToolTip = "複製所有連結模型中的版開口";
+                btnDataSlabCopy.LongDescription = $"複製所有連結模型中的版開口，以供SEM開口編號用({assemblyInfo})";
+                btnDataSlabCopy.LargeImage = imgSrcSlabCopy;
+            }
+
+            PushButtonData btnDataSlabCopyPart = new PushButtonData(
+            "MyButton_SlabCopyPart",
+            "依樓層複製\n穿版開口",
+            ApiDllPath_WallCast,
+            "CEC_WallCast.CopyPartSlabCast"
+            );
+            {
+                btnDataSlabCopyPart.ToolTip = "依視圖參考樓層複製連結模型中的版開口";
+                btnDataSlabCopyPart.LongDescription = $"依視圖參考樓層複製連結模型中的版開口，以供SEM開口編號用({assemblyInfo})";
+                btnDataSlabCopyPart.LargeImage = imgSrcSlabCopyPart;
+            }
+
+            //複製穿版開口
+            SplitButtonData copySlabButtonData = new SplitButtonData("copySlabCast", "複製外參\n穿版開口");
+            SplitButton splitButtonCopySlabCast = panelSlabCSD.AddItem(copySlabButtonData) as SplitButton;
+            PushButton buttonCopySlabCast = splitButtonCopySlabCast.AddPushButton(btnDataSlabCopy);
+            ContextualHelp copySlabHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-a265fa144de34d2fbab57b59f8cde593?pvs=4");
+            splitButtonCopySlabCast.SetContextualHelp(copySlabHelp);
+            buttonCopySlabCast.SetContextualHelp(copySlabHelp);
+            PushButton buttonCopySlabPart = splitButtonCopySlabCast.AddPushButton(btnDataSlabCopyPart);
+            ContextualHelp copyPartSlabHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-1a8ca874a9b9497c869687a2fca58f90?pvs=4");
+            buttonCopySlabPart.SetContextualHelp(copyPartSlabHelp);
+            checkitem.Add(buttonCopySlabCast);
+            only2Ditem.Add(buttonCopySlabPart);
+
             #endregion
 
             #region[Panel6] - 管線預組
@@ -726,9 +952,17 @@ namespace CEC_License
                 btnDataReNumber.LargeImage = imgSrcReNumber;
             }
             PushButton buttonCreateISO = panel6.AddItem(btnDataCreateISO) as PushButton;
+            ContextualHelp createISOHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-ISO-b8a7796dac714f478b252a23a3760cf7?pvs=4");
+            buttonCreateISO.SetContextualHelp(createISOHelp);
             PushButton buttonCleanUpNumber = panel6.AddItem(btnDataCleanUpNumber) as PushButton;
+            ContextualHelp cleanUpNumberHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-bd6a07d7511643e190054e6cd2dfd264?pvs=4");
+            buttonCleanUpNumber.SetContextualHelp(cleanUpNumberHelp);
             PushButton buttonCleanTags = panel6.AddItem(btnDataCleanTags) as PushButton;
+            ContextualHelp cleanTagsHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-8a00be789e0f4b9fa4217f5fb465eaf4?pvs=4");
+            buttonCleanTags.SetContextualHelp(cleanTagsHelp);
             PushButton buttonReNumber = panel6.AddItem(btnDataReNumber) as PushButton;
+            ContextualHelp reNumberHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-6f0d7fdffbd34a4b9f7f40be37c79a09?pvs=4");
+            buttonReNumber.SetContextualHelp(reNumberHelp);
             checkitem.Add(buttonCreateISO);
             only3Ditem.Add(buttonCleanUpNumber);
             only3Ditem.Add(buttonCleanTags);
@@ -751,6 +985,8 @@ namespace CEC_License
                 btnDataBlkTrans.LargeImage = imgSrcBlkTrans;
             };
             PushButton buttonBlkTrans = panel7.AddItem(btnDataBlkTrans) as PushButton;
+            ContextualHelp blkTransHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-7627cf11c83a4e18ad9d8767469c8002?pvs=4");
+            buttonBlkTrans.SetContextualHelp(blkTransHelp);
             only2Ditem.Add(buttonBlkTrans);
             #endregion
 
@@ -759,7 +995,7 @@ namespace CEC_License
             ImageSource imgSrchHoriTagSet = GetImageSource(image_horizontalTagSet);
             PushButtonData btnHoriTagSet = new PushButtonData(
             "MyButton_HoriTagSet",
-            "設定\n   水平管標籤   ",
+            "設定\n水平管標籤",
             ApiDllPath_PipeTags,
             "PipeTagger.Tag_setting"//按鈕的全名-->要依照需要參照的command打入
             );
@@ -773,7 +1009,7 @@ namespace CEC_License
             ImageSource imgSrcHoriTagPlace = GetImageSource(image_horizontalTagPlace);
             PushButtonData btnHoriPlace = new PushButtonData(
             "MyButton_HoriTagPlace",
-            "放置\n   水平管標籤   ",
+            "放置\n水平管標籤",
             ApiDllPath_PipeTags,
             "PipeTagger.Place_tag"//按鈕的全名-->要依照需要參照的command打入
             );
@@ -784,10 +1020,33 @@ namespace CEC_License
             };
 
             PushButton buttonHTagSet = panel8.AddItem(btnHoriTagSet) as PushButton;
+            ContextualHelp HTagSet = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-b7df19780c60459cb6e889679cc70ce4?pvs=4");
+            buttonHTagSet.SetContextualHelp(HTagSet);
             PushButton buttonHTagPlace = panel8.AddItem(btnHoriPlace) as PushButton;
+            ContextualHelp HTagPlace = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-45d15d9ccbbd4a33a522389ac1ad80a1?pvs=4");
+            buttonHTagPlace.SetContextualHelp(HTagPlace);
             only2Ditem.Add(buttonHTagSet);
             only2Ditem.Add(buttonHTagPlace);
+            #endregion
 
+            #region [Panel8] - 數量計算
+            System.Drawing.Image image_zoningEquipCount = Properties.Resources.分區數量計算_ai_x32;
+            ImageSource imgSrcEquipCount = GetImageSource(image_zoningEquipCount);
+            PushButtonData btnEquipCount = new PushButtonData(
+                "MyButton_EquipCount",
+                "分區\n數量計算",
+                ApiDllPath_EquipsCount,
+                "CEC_Count.EquipCount"//按鈕的全名-->要依照需要參照的command打入
+                );
+            {
+                btnEquipCount.ToolTip = "依據分區進行數量計算";
+                btnEquipCount.LongDescription = "依據外參連結中的量體進行分區數量計算";
+                btnEquipCount.LargeImage = imgSrcEquipCount;
+            };
+            PushButton buttonEquipCount = panel9.AddItem(btnEquipCount) as PushButton;
+            ContextualHelp equipCountHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-4dd6f8ac01124ffb94cc41890d347c85?pvs=4");
+            buttonEquipCount.SetContextualHelp(equipCountHelp);
+            checkitem.Add(buttonEquipCount);
             #endregion
 
             #region[Panel Regis] - 土木機電BIM-註冊資訊
@@ -800,6 +1059,8 @@ namespace CEC_License
                 btnRegis.LargeImage = imgRegis;
             }
             PushButton pushButtonRegistration = panelRegis.AddItem(btnRegis) as PushButton;
+            ContextualHelp registrationHelp = new ContextualHelp(ContextualHelpType.Url, "https://acute-soarer-f08.notion.site/RevitAPI-37ace8b819824de0b0b433633e5d7d64?pvs=4");
+            pushButtonRegistration.SetContextualHelp(registrationHelp);
             #endregion
 
             return Result.Succeeded;

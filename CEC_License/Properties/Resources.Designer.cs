@@ -103,6 +103,16 @@ namespace CEC_License.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap 分區數量計算_ai_x32 {
+            get {
+                object obj = ResourceManager.GetObject("分區數量計算_ai_x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap 副穿樑套管ICON合集_複製 {
             get {
                 object obj = ResourceManager.GetObject("副穿樑套管ICON合集_複製", resourceCulture);
@@ -466,6 +476,76 @@ namespace CEC_License.Properties {
         internal static System.Drawing.Bitmap 預組ICON_重新編號_svg_32 {
             get {
                 object obj = ResourceManager.GetObject("預組ICON_重新編號_svg_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 點選放置圓形版開口_依樓層複製32_svg {
+            get {
+                object obj = ResourceManager.GetObject("點選放置圓形版開口_依樓層複製32_svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 點選放置圓形版開口_局部更新32_svg {
+            get {
+                object obj = ResourceManager.GetObject("點選放置圓形版開口_局部更新32_svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 點選放置圓形版開口_更新32_svg {
+            get {
+                object obj = ResourceManager.GetObject("點選放置圓形版開口_更新32_svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 點選放置圓形版開口_複製32_svg {
+            get {
+                object obj = ResourceManager.GetObject("點選放置圓形版開口_複製32_svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 點選放置圓形版開口32_svg {
+            get {
+                object obj = ResourceManager.GetObject("點選放置圓形版開口32_svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 點選放置多管版開口32_svg {
+            get {
+                object obj = ResourceManager.GetObject("點選放置多管版開口32_svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 點選放置方形版開口32_svg {
+            get {
+                object obj = ResourceManager.GetObject("點選放置方形版開口32_svg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

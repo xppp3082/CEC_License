@@ -119,6 +119,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CEC_License.addin" />
+    <None Include="Resources\點選放置圓形版開口_依樓層複製32-svg.png" />
+    <None Include="Resources\點選放置圓形版開口32-svg.png" />
+    <None Include="Resources\點選放置圓形版開口_複製32-svg.png" />
+    <None Include="Resources\點選放置圓形版開口_更新32-svg.png" />
+    <None Include="Resources\點選放置圓形版開口_局部更新32-svg.png" />
+    <None Include="Resources\點選放置多管版開口32-svg.png" />
+    <None Include="Resources\點選放置方形版開口32-svg.png" />
+    <None Include="Resources\分區數量計算-ai_x32.png" />
     <None Include="Resources\穿牆套管ICON合集-複製逐層-svg.png" />
     <None Include="Resources\穿樑套管ICON合集_逐層複製.png" />
     <None Include="Resources\2. 放置管排管段標籤96.png" />
