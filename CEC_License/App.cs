@@ -56,11 +56,7 @@ namespace CEC_License
             string ApiDllPath_BlockTrans = TargetPath + versionNumber + @"\CEC_CADBlockTrans.dll";
             string ApiDllPath_PipeTags = TargetPath + versionNumber + @"\PipeTagger.dll";
             string ApiDllPath_EquipsCount = TargetPath + versionNumber + @"\CEC_Count.dll";
-            //string ApiDllPath_Hanger = TargetPath + @"\AutoHangerCreation_ButtonCreate.dll";
-            //string ApiDllPath_BeamCast = TargetPath  + @"\BeamCasing_ButtonCreate.dll";
-            //string ApiDllPath_WallCast = TargetPath + @"\CEC_WallCast.dll";
-            //string ApiDllPath_PreFab = TargetPath  + @"\CEC_PreFabric.dll";
-            //string ApiDllPath_BlockTrans = TargetPath + @"\CEC_CADBlockTrans.dll";
+            string ApiDllPath_NumberRule = TargetPath + versionNumber + @"\CEC_NumRule.dll";
 
             string RevitApiDllPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Autodesk\Revit\Addins\CEC_API\CEC_RevitAPI2019.dll";
             string ThisDllPath = AssemblyFullName;
