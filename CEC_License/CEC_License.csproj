@@ -119,6 +119,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CEC_License.addin" />
+    <None Include="Resources\複製專案標準-svg_pix32.png" />
+    <None Include="Resources\依開口類型編號-svg_pix32.png" />
+    <None Include="Resources\依開口類型重新編號-svg_pix32.png" />
+    <None Include="Resources\系統mapping更新-svg_pix32.png" />
+    <None Include="Resources\系統mapping-svg_pix32.png" />
     <None Include="Resources\點選放置圓形版開口_依樓層複製32-svg.png" />
     <None Include="Resources\點選放置圓形版開口32-svg.png" />
     <None Include="Resources\點選放置圓形版開口_複製32-svg.png" />

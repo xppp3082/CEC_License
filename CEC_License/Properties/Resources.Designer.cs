@@ -103,6 +103,26 @@ namespace CEC_License.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap 依開口類型編號_svg_pix32 {
+            get {
+                object obj = ResourceManager.GetObject("依開口類型編號_svg_pix32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 依開口類型重新編號_svg_pix32 {
+            get {
+                object obj = ResourceManager.GetObject("依開口類型重新編號_svg_pix32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap 分區數量計算_ai_x32 {
             get {
                 object obj = ResourceManager.GetObject("分區數量計算_ai_x32", resourceCulture);
@@ -436,6 +456,36 @@ namespace CEC_License.Properties {
         internal static System.Drawing.Bitmap 穿牆套管ICON合集_重新編號_svg {
             get {
                 object obj = ResourceManager.GetObject("穿牆套管ICON合集_重新編號_svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 系統mapping_svg_pix32 {
+            get {
+                object obj = ResourceManager.GetObject("系統mapping_svg_pix32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 系統mapping更新_svg_pix32 {
+            get {
+                object obj = ResourceManager.GetObject("系統mapping更新_svg_pix32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 複製專案標準_svg_pix32 {
+            get {
+                object obj = ResourceManager.GetObject("複製專案標準_svg_pix32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
